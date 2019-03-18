@@ -1,9 +1,9 @@
 'use strict';
 const isEmptyIterable = require('is-empty-iterable');
 
-const pRace = iterable => {
+const pRace = async iterable => {
 	if (isEmptyIterable(iterable)) {
-		return Promise.reject(new RangeError('Expected the input to contain at least one item'));
+		throw new RangeError('Expected the iterable to contain at least one item');
 	}
 
 	return Promise.race(iterable);

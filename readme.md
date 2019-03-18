@@ -10,7 +10,7 @@ This fixes the [silly behavior](https://github.com/domenic/promises-unwrapping/i
 ## Install
 
 ```
-$ npm install --save p-race
+$ npm install p-race
 ```
 
 
@@ -19,11 +19,11 @@ $ npm install --save p-race
 ```js
 const pRace = require('p-race');
 
+Promise.race([]);
+// Returns a forever pending promise…
+
 pRace([]);
 //=> [RangeError: Expected the input to contain at least one item]
-
-Promise.race([]);
-// Forever pending promise
 ```
 
 
