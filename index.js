@@ -10,4 +10,5 @@ const pRace = async iterable => {
 };
 
 module.exports = pRace;
+// TODO: Remove this for the next major release
 module.exports.default = pRace;
