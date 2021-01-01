@@ -1,4 +1,4 @@
-# p-race [![Build Status](https://travis-ci.org/sindresorhus/p-race.svg?branch=master)](https://travis-ci.org/sindresorhus/p-race)
+# p-race
 
 > A better [`Promise.race()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise/race)
 
