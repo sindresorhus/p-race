@@ -1,14 +1,9 @@
-'use strict';
-const isEmptyIterable = require('is-empty-iterable');
+import isEmptyIterable from 'is-empty-iterable';
 
-const pRace = async iterable => {
+export default async function pRace(iterable) {
 	if (isEmptyIterable(iterable)) {
 		throw new RangeError('Expected the iterable to contain at least one item');
 	}
 
 	return Promise.race(iterable);
-};
-
-module.exports = pRace;
-// TODO: Remove this for the next major release
-module.exports.default = pRace;
+}

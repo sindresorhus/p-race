@@ -6,18 +6,16 @@ This fixes the [silly behavior](https://github.com/domenic/promises-unwrapping/i
 
 `Promise.race()` returns the first promise to fulfill or reject. Check out [`p-any`](https://github.com/sindresorhus/p-any) if you like to get the first promise to fulfill.
 
-
 ## Install
 
 ```
 $ npm install p-race
 ```
 
-
 ## Usage
 
 ```js
-const pRace = require('p-race');
+import pRace from 'p-race';
 
 Promise.race([]);
 // Returns a forever pending promise…
@@ -26,18 +24,11 @@ pRace([]);
 //=> [RangeError: Expected the input to contain at least one item]
 ```
 
-
 ## API
 
 See the [`Promise.race()` docs](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise/race).
-
 
 ## Related
 
 - [p-any](https://github.com/sindresorhus/p-any) - Wait for any promise to be fulfilled
 - [More…](https://github.com/sindresorhus/promise-fun)
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)
