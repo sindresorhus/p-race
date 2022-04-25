@@ -12,6 +12,14 @@ Promise.race([]);
 
 pRace([]);
 //=> [RangeError: Expected the input to contain at least one item]
+
+pRace(signal => [
+	signal => fetch('/api', {signal}),
+	signal => setTimeout(10, {signal}),
+]);
+//=> Remaining promises other than first one will be aborted.
 ```
 */
-export default function pRace<ValueType>(iterable: Iterable<ValueType | PromiseLike<ValueType>>): Promise<ValueType>;
+type PromisibleIterable<ValueType> = Iterable<ValueType | PromiseLike<ValueType>>;
+
+export default function pRace<ValueType>(iterableOrExecutor: (PromisibleIterable<ValueType>) | ((signal: AbortSignal) => PromisibleIterable<ValueType>)): Promise<ValueType>;
