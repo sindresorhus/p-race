@@ -14,6 +14,6 @@ export default async function pRace(executorOrIterable) {
 	}
 
 	const result = await Promise.race(iterable);
-	abortController.abort();
+	abortController?.abort();
 	return result;
 }
