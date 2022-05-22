@@ -20,6 +20,6 @@ pRace(signal => [
 //=> Remaining promises other than first one will be aborted.
 ```
 */
-type PromisibleIterable<ValueType> = Iterable<ValueType | PromiseLike<ValueType>>;
+type IterableOfPromiseLike<ValueType> = Iterable<ValueType | PromiseLike<ValueType>>;
 
-export default function pRace<ValueType>(iterableOrExecutor: (PromisibleIterable<ValueType>) | ((signal: AbortSignal) => PromisibleIterable<ValueType>)): Promise<ValueType>;
+export default function pRace<ValueType>(iterableOrExecutor: (IterableOfPromiseLike<ValueType>) | ((signal: AbortSignal) => IterableOfPromiseLike<ValueType>)): Promise<ValueType>;
