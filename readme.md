@@ -34,13 +34,13 @@ Type: `Iterable<Promise|any>`
 
 #### executor
 
-Type: `(signal: AbortSignal) => Iterable<Promise|any>`
+Type: `signal => Iterable<Promise|any>`
 
 ##### signal
 
 Type: [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
 
-You can pass the `signal` object to abort remaining promises when resolve the first promise.
+You can use `signal` to each iterable's element to abort remaining promises when resolve the first promise.
 
 *Requires Node.js 16 or later.*
 
@@ -48,8 +48,8 @@ You can pass the `signal` object to abort remaining promises when resolve the fi
 import pRace from 'p-race';
 
 pRace(signal => [
-	signal => fetch('/api', {signal}),
-	signal => setTimeout(10, {signal}),
+	fetch('/api', {signal}),
+	setTimeout(10, {signal}),
 ]);
 // Remaining promises other than first one will be aborted.
 ```

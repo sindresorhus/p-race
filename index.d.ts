@@ -14,8 +14,8 @@ pRace([]);
 //=> [RangeError: Expected the input to contain at least one item]
 
 pRace(signal => [
-	signal => fetch('/api', {signal}),
-	signal => setTimeout(10, {signal}),
+	fetch('/api', {signal}),
+	setTimeout(10, {signal}),
 ]);
 //=> Remaining promises other than first one will be aborted.
 ```
