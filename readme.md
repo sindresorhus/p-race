@@ -26,11 +26,17 @@ pRace([]);
 
 ## API
 
-### pRace(signal)
+### pRace(executor | iterable)
 
-See the [`Promise.race()` docs](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise/race).
+#### iterable
 
-#### signal
+Type: `Iterable<Promise|any>`
+
+#### executor
+
+Type: `(signal: AbortSignal) => Iterable<Promise|any>`
+
+##### signal
 
 Type: [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
 
