@@ -1,3 +1,5 @@
+type IterableOfPromiseLike<ValueType> = Iterable<ValueType | PromiseLike<ValueType>>;
+
 /**
 A better [`Promise.race()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise/race).
 
@@ -20,6 +22,4 @@ pRace(signal => [
 //=> Remaining promises other than first one will be aborted.
 ```
 */
-type IterableOfPromiseLike<ValueType> = Iterable<ValueType | PromiseLike<ValueType>>;
-
 export default function pRace<ValueType>(iterableOrExecutor: (IterableOfPromiseLike<ValueType>) | ((signal: AbortSignal) => IterableOfPromiseLike<ValueType>)): Promise<ValueType>;
