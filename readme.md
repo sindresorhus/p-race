@@ -30,11 +30,11 @@ pRace([]);
 
 #### iterable
 
-Type: `Iterable<Promise|any>`
+Type: `Iterable<Promise | unknown>`
 
 #### executor
 
-Type: `signal => Iterable<Promise|any>`
+Type: `signal => Iterable<Promise | unknown>`
 
 ##### signal
 
@@ -51,7 +51,7 @@ pRace(signal => [
 	fetch('/api', {signal}),
 	setTimeout(10, {signal}),
 ]);
-//=> Remaining promises other than first one will be aborted.
+// Remaining promises other than first one will be aborted.
 ```
 
 ## Related
