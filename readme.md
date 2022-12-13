@@ -26,7 +26,7 @@ pRace([]);
 
 ## API
 
-### pRace(executor | iterable)
+### pRace(iterable | executor)
 
 #### iterable
 
@@ -40,7 +40,7 @@ Type: `signal => Iterable<Promise|any>`
 
 Type: [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
 
-You can use `signal` to each iterable's element to abort remaining promises when resolve the first promise.
+You can pass the `signal` to each iterable's element to abort remaining promises when resolve the first promise.
 
 *Requires Node.js 16 or later.*
 
@@ -51,7 +51,7 @@ pRace(signal => [
 	fetch('/api', {signal}),
 	setTimeout(10, {signal}),
 ]);
-// Remaining promises other than first one will be aborted.
+//=> Remaining promises other than first one will be aborted.
 ```
 
 ## Related
